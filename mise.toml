@@ -1,0 +1,5 @@
+[tasks]
+plots = "uv run streamlit run pge_plots.py"
+plots_info = "uv run streamlit run pge_plots.py -- --level INFO"
+ruff = "uv run ruff check"
+black = "uv run black pge_plots.py"
