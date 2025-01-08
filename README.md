@@ -5,9 +5,13 @@ This repo contains a [Streamlit](https://streamlit.io/) dashboard that generates
 1. Electric energy usage from [PG&E *Download My Data*](https://www.pge.com/en/save-energy-and-money/energy-usage-and-tips/understand-my-usage.html#accordion-faec0a92be-item-687e81ab07)
 2. Hourly weather data at the zip code of the PG&E account via [Meteostat](https://dev.meteostat.net/python/)
 
-Example PG&E data is included as a demo
+Example PG&E data is included as a demo. Here's a preview:
+
+![heat map screen shot](img/screenshot.png)
 
 There is a secondary goal of this repo: to experiment with distributing a Python tool using [Astral uv](https://docs.astral.sh/uv/), a Python package and project manager
+
+A little bit more about the motivation for this repo are on my blog: https://www.nickgregorich.com/posts/more-uv-and-pge-plots/
 
 ## Installation
 
@@ -44,3 +48,13 @@ Hopefully that felt like a quick and easy way to run a Python script, thanks to 
    2. Dependencies are removed from the project using `uv remove <package>`
 
 The dream is that the headaches and heartburn associated with distributing a Python project will be a thing of the past with uv 💫
+
+## Contributing
+
+This project was intended as a `uv` demo where you can see some cool plots, so I am not expecting contributions – but please feel free to file an Issue or PR
+
+I'd love to see if you find anything interesting in your PG&E plots! Please create a Discussion or email the address on my blog (link above)
+
+## License
+
+[MIT](LICENSE.md)
