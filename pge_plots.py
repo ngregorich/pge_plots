@@ -264,7 +264,9 @@ def make_heatmaps(
 
     _fig.add_trace(
         go.Heatmap(
-            z=_energy_df.to_numpy(),
+            x=_energy_df.columns,
+            y=_energy_df.index,
+            z=_energy_df,
             opacity=1,
             colorscale="portland",
             colorbar=_colorbar_1_dict,
@@ -275,7 +277,9 @@ def make_heatmaps(
 
     _fig.add_trace(
         go.Heatmap(
-            z=_weather_df.to_numpy(),
+            x=_weather_df.columns,
+            y=_weather_df.index,
+            z=_weather_df,
             opacity=1,
             colorscale="portland",
             colorbar=_colorbar_2_dict,
@@ -284,9 +288,12 @@ def make_heatmaps(
         col=1,
     )
 
+    # using x and y
     _fig.add_trace(
         go.Heatmap(
-            z=_weather_df.to_numpy(),
+            x=_energy_df.columns,
+            y=_energy_df.index,
+            z=_weather_df,
             opacity=1,
             colorscale="portland",
             colorbar=_colorbar_3_dict,
@@ -297,6 +304,8 @@ def make_heatmaps(
 
     _fig.add_trace(
         go.Heatmap(
+            x=_energy_df.columns,
+            y=_energy_df.index,
             z=_energy_df.to_numpy(),
             opacity=1,
             colorscale=alpha_scale,
@@ -533,6 +542,7 @@ The intent is to explore energy usage by time of day, time of year, and compared
     - The bottom of the plot is 11:00 PM
 - Zooming in on any plot will synchronize the zoom window in all 3 heat maps
 - A control bar will appear at the top to autoscale or go full screen
+- The mouseover hover will show the date and time for each pixel
 """
         )
 
