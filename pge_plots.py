@@ -198,12 +198,15 @@ def get_process_weather(
     _zipcode = _search.by_zipcode(_header_address.zip_5_4[0])
     _location = Point(_zipcode.lat, _zipcode.lng)
 
-    # NOTE: meteostat throws a future warning
+    # NOTE: meteostat throws a warning and 2 future warnings
+    # FutureWarning: Support for nested sequences for 'parse_dates' in pd.read_csv is deprecated.Combine the desired columns with pd.to_datetime after parsing instead.
+    # Warning: Cannot load hourly / 2023 / 74506.csv.gz from https://bulk.meteostat.net/v2/
+    # FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
+    # NOTE: the second future warning is caused by this meteostat code
     # hourly.py
     #   class Hourly(TimeSeries):
     #     # Default frequency
     #     _freq: str = "1H"
-    # FutureWarning: 'H' is deprecated and will be removed in a future version, please use 'h' instead.
 
     _weather_hourly = Hourly(
         _location, _start_end_datetime.start, _start_end_datetime.end
