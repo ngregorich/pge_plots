@@ -291,7 +291,6 @@ def make_heatmaps(
         col=1,
     )
 
-    # using x and y
     _fig.add_trace(
         go.Heatmap(
             x=_energy_df.columns,
