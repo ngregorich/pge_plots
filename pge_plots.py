@@ -329,10 +329,6 @@ def make_heatmaps(
     _fig.for_each_yaxis(lambda x: x.update(tickvals=custom_ticks.y_ticks))
     _fig.for_each_yaxis(lambda x: x.update(ticktext=custom_ticks.y_tick_labels))
 
-    _fig.for_each_xaxis(lambda x: x.update(tickvals=custom_ticks.x_ticks))
-    _fig.for_each_xaxis(lambda x: x.update(ticktext=custom_ticks.x_tick_labels))
-    _fig.for_each_xaxis(lambda x: x.update(tickangle=-45))
-
     return _fig
 
 
